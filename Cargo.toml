@@ -8,11 +8,11 @@ description = "Lane X — the xedge cross-store overlay + OverlayReader: GraphRe
 
 [dependencies]
 # Estate-dep-only: the spine (symbol_epoch / traverse_multi / with_read_inline / GraphRead /
-# AsyncGraphStore / Edge / conformance kit) lives in the LOCAL estate 0.12.0 on lane-a/epoch.
-wicked-estate-core = { path = "../wicked-estate/crates/wicked-estate-core", version = "0.12.0" }
+# AsyncGraphStore / Edge / conformance kit) — from crates.io at 0.12.0.
+wicked-estate-core = "0.12.0"
 # `pool` brings SqlitePool + open_sqlite_pool — the production AsyncGraphStore the OverlayReader
 # drives foreign engines through (with_read_inline, the no-deadlock seam).
-wicked-estate-store = { path = "../wicked-estate/crates/wicked-estate-store", version = "0.12.0", features = ["pool"] }
+wicked-estate-store = { version = "0.12.0", features = ["pool"] }
 
 # xedge.db own-file single-writer store.
 rusqlite = { version = "0.32", features = ["bundled"] }

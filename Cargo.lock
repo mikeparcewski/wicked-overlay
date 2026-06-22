@@ -1475,6 +1475,8 @@ dependencies = [
 [[package]]
 name = "wicked-estate-core"
 version = "0.12.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "94877bd86279bb9b59e1b2a65922dd2e24610fcc38c7dc18ab1fedcde20f7ab3"
 dependencies = [
  "async-trait",
  "serde",
@@ -1485,6 +1487,8 @@ dependencies = [
 [[package]]
 name = "wicked-estate-observe"
 version = "0.12.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "440de9ddb96efe717e3edd2900b29723ec3ff1cf53b5d1b5f5afc8c76e545153"
 dependencies = [
  "reqwest",
  "serde_json",
@@ -1494,6 +1498,8 @@ dependencies = [
 [[package]]
 name = "wicked-estate-store"
 version = "0.12.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1973cb11441654528d008eb56551a057da57f7e0f5dc63841b5f9d3c74674581"
 dependencies = [
  "async-trait",
  "deadpool",

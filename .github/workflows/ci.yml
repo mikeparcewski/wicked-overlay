@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  # The non-negotiable gate: 0 warnings · clippy · tests · fmt.
+  # NOTE: green requires wicked-estate-core + wicked-estate-store on crates.io at the pinned 0.12.0,
+  # because a runner checks out only this repo and the estate deps are version-only.
+  gate:
+    name: gate (build · clippy · test · fmt)
+    runs-on: ubuntu-latest
+    env:
+      RUSTFLAGS: "-D warnings"
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+      - uses: Swatinem/rust-cache@v2
+      - name: fmt --check
+        run: cargo fmt --all -- --check
+      - name: build (0 warnings, all targets)
+        run: cargo build --all-targets
+      - name: clippy (-D warnings)
+        run: cargo clippy --all-targets -- -D warnings
+      - name: test
+        run: cargo test

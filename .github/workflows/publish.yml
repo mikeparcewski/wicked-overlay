@@ -1,0 +1,26 @@
+name: Publish
+
+# Fires when a version tag (e.g. v0.12.0) is pushed.
+# Prereq: set CARGO_REGISTRY_TOKEN in repo Settings → Secrets → Actions, AND wicked-estate-core +
+# wicked-estate-store must already be on crates.io at the pinned 0.12.0 (publish wicked-estate first).
+
+on:
+  push:
+    tags: ['v*']
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  publish:
+    name: publish to crates.io
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - name: publish
+        env:
+          CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
+        run: bash scripts/publish.sh
