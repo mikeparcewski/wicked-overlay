@@ -1,0 +1,24 @@
+[package]
+name = "wicked-overlay"
+version = "0.12.0"
+edition = "2024"
+rust-version = "1.85"
+license = "MIT"
+description = "Lane X — the xedge cross-store overlay + OverlayReader: GraphRead that unions a home engine with foreign engines at read time (the cross-store about-arm differentiator engine)."
+
+[dependencies]
+# Estate-dep-only: the spine (symbol_epoch / traverse_multi / with_read_inline / GraphRead /
+# AsyncGraphStore / Edge / conformance kit) lives in the LOCAL estate 0.12.0 on lane-a/epoch.
+wicked-estate-core = { path = "../wicked-estate/crates/wicked-estate-core", version = "0.12.0" }
+# `pool` brings SqlitePool + open_sqlite_pool — the production AsyncGraphStore the OverlayReader
+# drives foreign engines through (with_read_inline, the no-deadlock seam).
+wicked-estate-store = { path = "../wicked-estate/crates/wicked-estate-store", version = "0.12.0", features = ["pool"] }
+
+# xedge.db own-file single-writer store.
+rusqlite = { version = "0.32", features = ["bundled"] }
+# Handle::block_on for driving a foreign async pool from the home blocking-pool thread (DEC-X1b).
+tokio = { version = "1", features = ["rt-multi-thread"] }
+
+[dev-dependencies]
+tempfile = "3"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "time"] }
