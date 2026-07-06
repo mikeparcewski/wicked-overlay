@@ -1,3 +1,9 @@
+> **DEPRECATED — 2026-07-06**
+> This repository has been superseded by [wicked-estate v0.13.0](https://github.com/mikeparcewski/wicked-estate).
+> The `XedgeStore` and `OverlayReader` are now available as the internal workspace crate
+> `wicked-estate-overlay` inside the unified `wicked-estate` repository.
+> This repository is archived and will not receive further updates.
+
 ```
           _      _            _                           _             
 __      _(_) ___| | _____  __| |       _____   _____ _ __| | __ _ _   _ 
