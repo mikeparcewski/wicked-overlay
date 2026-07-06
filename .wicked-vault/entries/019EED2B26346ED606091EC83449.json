@@ -1,0 +1,27 @@
+{
+  "id": "019EED2B26346ED606091EC83449",
+  "scope": "build",
+  "phase": "review",
+  "claim_id": "tests-pass",
+  "kind": "test-run",
+  "source": "cargo test --test cross_engine_recall",
+  "verifier": {
+    "kind": "regex_match",
+    "params": {
+      "pattern": "4 passed; 0 failed"
+    }
+  },
+  "criteria_sha256": "4bdb34339182f6fcee3c67f72c0648ba9d7380f829daeb2674e55fd86e2cbdb9",
+  "payload_sha256": "be5aef9c809f79a0e8c1f813e1e18167905ff069b9b70033fbad395b0016341d",
+  "acceptance_criteria": "tests-pass: `cargo test --test cross_engine_recall` satisfies regex_match:4 passed; 0 failed",
+  "criteria_authored_by": "record",
+  "payload_ref": "payloads/be5aef9c809f79a0e8c1f813e1e18167905ff069b9b70033fbad395b0016341d",
+  "envelope_hash": "9b923cf62da81ed2dd9c8003895517f09b2c453a6e348c58f4414dc240e48696",
+  "status_at_record": "pass",
+  "state": "active",
+  "supersedes": null,
+  "contract_version": "c440f71e7838dff0",
+  "created_at": "2026-06-22T02:31:28.564Z",
+  "created_by": "garden-prove",
+  "created_by_source": "explicit"
+}

@@ -1,6 +1,7 @@
 [package]
 name = "wicked-overlay"
 version = "0.12.1"
+publish = false
 edition = "2024"
 rust-version = "1.85"
 license = "MIT"

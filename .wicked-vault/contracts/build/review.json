@@ -1,0 +1,21 @@
+{
+  "scope": "build",
+  "phase": "review",
+  "required_evidence": [
+    {
+      "claim_id": "tests-pass",
+      "kind": "test-run",
+      "verifier": {
+        "kind": "regex_match",
+        "params": {
+          "pattern": "4 passed; 0 failed"
+        }
+      },
+      "required": true,
+      "require_attestation": true
+    }
+  ],
+  "contract_version": "c440f71e7838dff0",
+  "origin": "cli",
+  "declared_at": "2026-06-22T02:31:27.615Z"
+}

@@ -1515,7 +1515,7 @@ dependencies = [
 
 [[package]]
 name = "wicked-overlay"
-version = "0.12.0"
+version = "0.12.1"
 dependencies = [
  "rusqlite",
  "tempfile",
