@@ -22,6 +22,11 @@
 //! the crate's own tests carry a self-contained `cross_engine_recall_at_k` demonstration over a
 //! zero-lexical-overlap corpus to prove the mechanism in isolation.
 
+#![deprecated(
+    since = "0.12.1",
+    note = "Absorbed into wicked-estate v0.13+. See https://github.com/mikeparcewski/wicked-estate"
+)]
+
 pub mod overlay;
 pub mod xedge;
 

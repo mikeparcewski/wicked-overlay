@@ -1,10 +1,10 @@
 [package]
 name = "wicked-overlay"
-version = "0.12.0"
+version = "0.12.1"
 edition = "2024"
 rust-version = "1.85"
 license = "MIT"
-description = "Lane X — the xedge cross-store overlay + OverlayReader: GraphRead that unions a home engine with foreign engines at read time (the cross-store about-arm differentiator engine)."
+description = "DEPRECATED: absorbed into wicked-estate v0.13+. Migrate to wicked-estate-mcp for unified memory/knowledge/estate tools."
 
 [dependencies]
 # Estate-dep-only: the spine (symbol_epoch / traverse_multi / with_read_inline / GraphRead /
